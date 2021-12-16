@@ -93,7 +93,7 @@ const newData = (req, res) => {
                 image: req.body.image, 
             postInfo: req.body.postInfo,
                 description: req.body.description,
-            image: 'https://pebble-test.herokuapp.com/uploads/posts/'+req.file.filename
+            image: 'https://pebble-api.herokuapp.com/uploads/posts/'+req.file.filename
         })
     }
     else{
@@ -120,7 +120,7 @@ const updateData = (req, res, next) => {
             if(err || !data) {
                 return res.json({message: "Data not found"});
             }
-            var temp = 'https://pebble-test.herokuapp.com/uploads/posts/'+req.file.filename
+            var temp = 'https://pebble-api.herokuapp.com/uploads/posts/'+req.file.filename
             data.image.push(temp)
             if(req.body.postInfo){
                 data.postInfo.description = req.body.postInfo.description
